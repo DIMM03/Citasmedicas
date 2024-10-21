@@ -1,0 +1,30 @@
+package com.example.citasmedicas
+
+import android.os.Bundle
+import androidx.fragment.app.Fragment
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+
+class SelecciondocFragment : Fragment() {
+
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        val view = inflater.inflate(R.layout.fragment_selecciondoc, container, false)
+        val recyclerView = view.findViewById<RecyclerView>(R.id.ViewDoctors)
+        recyclerView.layoutManager = LinearLayoutManager(requireContext())
+
+        return view
+    }
+    private fun getDoctors(): List<Doctor> {
+        return listOf(
+            Doctor("Dr. Mario", "Cardiología", "Disponible"),
+            Doctor("Dra. Psiquiatra", "Pediatría", "Ocupado"),
+            Doctor("Dr. Jonnhy Sin", "Dermatología", "Disponible")
+        )
+    }
+}
