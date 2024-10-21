@@ -1,0 +1,7 @@
+package com.example.citasmedicas
+
+class Doctor {
+    val nombre: String,
+    val especial: String,
+    val dispo: String
+}
